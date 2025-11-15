@@ -1,5 +1,5 @@
 <script>
-export default {
+export default { // export default == Options API
   components: {
   },
   data() {

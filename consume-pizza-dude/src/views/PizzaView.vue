@@ -1,7 +1,7 @@
 <script>
 import PizzaForm from '@/components/PizzaForm.vue';
 
-export default {
+export default { // export default == Options API
     emits: ['success', 'error', 'warning'],
     components: {
         PizzaForm
@@ -18,7 +18,7 @@ export default {
                 .then(response => this.pizzas = response.data)
                 .catch(error => {
                     if (error.status >= 500)
-                        this.$emit('warning', this.$warning)
+                        this.$emit('warning', this.$warningMessage)
                     else
                         this.$emit(`error`, error.response.data)
                 })
@@ -29,7 +29,7 @@ export default {
                     return response.data
                 }).catch(error => {
                     if (error.status >= 500)
-                        this.$emit(`warning`, this.$warning)
+                        this.$emit(`warning`, this.$warningMessage)
                     else
                         this.$emit(`error`, error.response.data)
                 })
@@ -50,7 +50,7 @@ export default {
                     await this.fetchPizzas()
                 }).catch(error => {
                     if (error.status >= 500)
-                        this.$emit(`warning`, this.$warning)
+                        this.$emit(`warning`, this.$warningMessage)
                     else
                         this.$emit(`error`, error.response.data)
                 })
@@ -70,7 +70,7 @@ export default {
                     await this.fetchPizzas()
                 }).catch(error => {
                     if (error.status >= 500)
-                        this.$emit(`warning`, this.$warning)
+                        this.$emit(`warning`, this.$warningMessage)
                     else
                         this.$emit(`error`, error.response.data)
                 })

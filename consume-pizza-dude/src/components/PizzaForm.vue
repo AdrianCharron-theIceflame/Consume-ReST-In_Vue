@@ -1,4 +1,4 @@
-<script setup>
+<script setup> // Script Setup == Composition API
 import { ref } from 'vue';
 import { useField } from 'vee-validate';
 const model = defineModel({ required: false })

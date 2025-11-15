@@ -10,9 +10,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   plugins: [
     vue(),
-    vuetify(),
     vueDevTools(),
-    ViteFonts({
+    vuetify(), // Add vuetify plugin to vite
+    ViteFonts({ // add fonts plugin to vite
       fontsource: {
         families: [
           {
@@ -29,9 +29,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
+  server: { // server options for DEV server only
     proxy: {
-      '/api': {
+      '/api': { // redirect any calls to API towards the API
         target: 'http://localhost:46276',
         changeOrigin: true
       }

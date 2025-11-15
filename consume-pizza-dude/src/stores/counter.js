@@ -1,3 +1,4 @@
+// Global storage - Not being used in app
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 

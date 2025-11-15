@@ -1,6 +1,6 @@
 <script>
 import PizzaForm from '@/components/PizzaForm.vue';
-export default {
+export default { // export default == Options API
     components: {
         PizzaForm
     },
@@ -14,7 +14,7 @@ export default {
                 })
                 .catch(error => {
                     if (error.status >= 500)
-                        this.$emit('warning', this.$warning)
+                        this.$emit('warning', this.$warningMessage)
                     if (error.status < 500) {
                         this.$emit(`error`, error.response.data)
                     }
